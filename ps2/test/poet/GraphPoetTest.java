@@ -86,6 +86,14 @@ public class GraphPoetTest {
         assertEquals("The poem should handle special characters correctly and generate a valid output", expectedPoem, generatedPoem);
     }
  
-
+  @Test
+    public void testBridgeWordsInMiddle() throws IOException {
+        GraphPoet poet = new GraphPoet(new File("C:/Users/S.S.T/Downloads/ps2/ps2/test/poet/test.txt"));
+        String inputText = "the sun horizon jumped"; // Shorter phrase for easier validation
+        String expectedPoem = "the sun sets beyond horizon jumped"; // The expected output with bridge words inserted
+        String generatedPoem = poet.poem(inputText);
+        System.out.println("Generated Poem: " + generatedPoem);  // Debugging print
+        assertEquals("The poem should insert bridge words where required", expectedPoem, generatedPoem);
+    }
 
 }
